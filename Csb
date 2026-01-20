@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>CSB~BANGLADESH Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+body{background:#000;color:#fff;min-height:100vh;}
+body.light{background:#f2f2f2;color:#000;}
+
+/* Top Bar */
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 15px;background:#111;}
+.top-left,.top-right{font-size:13px;}
+.top-center{font-weight:bold;color:#1d9bf0;}
+.menu-btn{background:none;border:none;color:#fff;font-size:20px;cursor:pointer;}
+
+/* Dashboard */
+.dashboard{padding:20px;text-align:center;}
+.card{max-width:420px;margin:auto;border:2px solid #1d9bf0;border-radius:14px;padding:20px;background:#000;}
+.icon{font-size:60px;}
+.card h3{margin:10px 0;color:#1d9bf0;}
+.card p{font-size:13px;margin:5px 0;}
+
+/* Step Buttons */
+.buttons{max-width:420px;margin:20px auto;display:flex;flex-direction:column;gap:12px;}
+.btn{display:none;padding:14px;border-radius:10px;color:#fff;text-decoration:none;font-weight:bold;display:flex;align-items:center;justify-content:center;}
+.btn i{margin-right:8px;font-size:16px;}
+.tg{background:#0088cc;}
+.fb{background:#1877f2;}
+.vid{background:#e62117;}
+.web{background:#2563eb;}
+
+/* Home Overlay */
+#homeOverlay{position:fixed;inset:0;background:#000;z-index:999;display:none;overflow:auto;}
+#homeOverlay.light{background:#f2f2f2;color:#000;}
+.close{position:absolute;top:12px;right:15px;font-size:22px;cursor:pointer;}
+
+/* Profile */
+.profile{text-align:center;margin-top:20px;}
+.profile-img{
+    width:120px;height:120px;border-radius:50%;
+    background:#333 url("https://i.ibb.co/0V696RNg/20260119-042358.png") center/cover;
+    margin:auto;border:4px solid #000;
+}
+.name{font-size:22px;font-weight:bold;margin-top:10px;}
+.verify{color:#1d9bf0;}
+.status{font-size:13px;color:#aaa;}
+
+/* Menu List */
+.menu{width:90%;max-width:400px;margin:25px auto;}
+.menu a{display:flex;align-items:center;gap:15px;background:#fff;color:#000;padding:14px;margin-bottom:12px;border-radius:12px;text-decoration:none;font-size:15px;}
+.menu a i{font-size:20px;}
+.menu .tg i{color:#0088cc;}
+.menu .fb i{color:#1877f2;}
+.menu .wa i{color:#25d366;}
+.menu .ab i{color:#555;}
+
+/* Dark button */
+.dark-btn{margin:15px auto;display:block;padding:8px 14px;border:none;border-radius:8px;cursor:pointer;}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <div class="top-left" id="time">Loading...</div>
+    <div class="top-center">CSB~BANGLADESH <i class="fa-solid fa-circle-check verify"></i></div>
+    <div class="top-right">
+        <button class="menu-btn" onclick="openHome()"><i class="fa-solid fa-bars"></i></button>
+    </div>
+</div>
+
+<div class="dashboard">
+    <div class="card">
+        <div class="icon">🤖</div>
+        <h3>LM Limon</h3>
+        <p id="ip">IP: Loading...</p>
+        <p id="location">📍 Location: Loading...</p>
+        <p id="browser"></p>
+        <p id="system"></p>
+    </div>
+
+    <div class="buttons">
+        <a id="b1" class="btn tg" href="https://t.me/csb_bangladesh2026" target="_blank" onclick="showNext(2)">
+            <i class="fa-brands fa-telegram"></i> Join Telegram
+        </a>
+        <a id="b2" class="btn vid" href="https://youtube.com/YourVideo" target="_blank" onclick="showNext(3)">
+            <i class="fa-solid fa-video"></i> Setup Video
+        </a>
+        <a id="b3" class="btn fb" href="https://www.facebook.com/share/1D2NcQLnzc/" target="_blank" onclick="showNext(4)">
+            <i class="fa-brands fa-facebook"></i> Facebook Page
+        </a>
+        <a id="b4" class="btn web" href="https://www.google.com/android/find" target="_blank">
+            <i class="fa-solid fa-globe"></i> CONTROLAR
+        </a>
+    </div>
+</div>
+
+<div id="homeOverlay">
+    <div class="close" onclick="closeHome()">❌</div>
+
+    <div class="profile">
+        <div class="profile-img"></div>
+        <div class="name">CSB~BANGLADESH <i class="fa-solid fa-circle-check verify"></i></div>
+        <div class="status">Developer•LM LIMON
+            Cyber Security • Ethical Practice</div>
+    </div>
+
+    <button class="dark-btn" onclick="toggleDark()">🌙 Dark / ☀️ Light</button>
+
+    <div class="menu">
+        <a class="tg" href="t.me/CSB_BANGLADESH01"><i class="fa-brands fa-telegram"></i> Telegram</a>
+        <a class="fb" href="https://www.facebook.com/profile.php?id=61553969132615"><i class="fa-brands fa-facebook"></i> Facebook</a>
+        <a class="wa" href="https://wa.me/qr/TJ6XL6HLFD2RI1"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a class="ab" href="আমাদের লক্ষ্য হলো:
+✔️ সাইবার নিরাপত্তা সম্পর্কে সচেতনতা তৈরি করা  
+✔️ ফোন ও অনলাইন অ্যাকাউন্ট সুরক্ষার গাইড দেওয়া  
+✔️ বৈধ ও অফিসিয়াল টুল ব্যবহারে সহায়তা করা"><i class="fa-solid fa-circle-info"></i> About</a>
+    </div>
+</div>
+
+<script>
+// Sequential Step Buttons
+document.getElementById("b1").style.display = "flex";
+document.getElementById("b2").style.display = "none";
+document.getElementById("b3").style.display = "none";
+document.getElementById("b4").style.display = "none";
+
+function showNext(n){
+    const b = document.getElementById("b"+n);
+    if(b) b.style.display = "flex";
+}
+
+// Update live time
+function updateTime(){
+    document.getElementById("time").innerText=
+    new Date().toLocaleString("bn-BD",{hour12:false});
+}
+setInterval(updateTime,1000);updateTime();
+
+// Browser and system info
+browser.innerText="🤖 "+navigator.userAgent;
+system.innerText="💻 "+navigator.platform;
+
+// Fetch IP and location
+fetch("https://ipapi.co/json/")
+.then(r=>r.json())
+.then(d=>{ip.innerText="IP: "+d.ip;location.innerText=`📍 ${d.city}, ${d.country_name}`;});
+
+// Home overlay functions
+function openHome(){homeOverlay.style.display="block";}
+function closeHome(){homeOverlay.style.display="none";}
+function toggleDark(){document.body.classList.toggle("light");homeOverlay.classList.toggle("light");}
+</script>
+
+</body>
+</html>
